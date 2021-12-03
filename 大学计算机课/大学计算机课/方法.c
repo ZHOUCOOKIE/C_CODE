@@ -155,11 +155,3 @@
 //	printf("%d", day);
 //	return 0;
 //}
-#include <stdio.h>
-int main()
-{
-	int i = 0;
-	for (i = 0; i <= 2021; i=i + 124)
-		printf("l love you to.");
-	return 0;
-}
