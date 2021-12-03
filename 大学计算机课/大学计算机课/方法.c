@@ -147,11 +147,3 @@
 //	luckiness,
 //	love
 //};
-//#include <stdio.h>
-//int main()
-//{
-//	int day;
-//	scanf("%d", &day);
-//	printf("%d", day);
-//	return 0;
-//}
