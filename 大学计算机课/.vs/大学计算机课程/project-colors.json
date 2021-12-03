@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c6c3da72-86ab-4eff-970f-3b30ef7d9f72": {
+      "ProjectGuid": "c6c3da72-86ab-4eff-970f-3b30ef7d9f72",
+      "DisplayName": "大学计算机课",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
