@@ -147,3 +147,87 @@
 //	luckiness,
 //	love
 //};
+//static修饰局部变量
+//#include <stdio.h>
+//int printadd()
+//{
+//	int a=0;
+//	a++;
+//	printf("%d", a);
+//	return 0;
+//}
+//int main()
+//{
+//	int i=0;
+//	for (; i < 6; i++)
+//		printadd();
+//	return 0;
+//}
+//#include <stdio.h>
+//int printadd()
+//{
+//	static int a = 0;
+//	a++;
+//	printf("%d", a);
+//	return 0;
+//}
+//int main()
+//{
+//	int i = 0;
+//	for (; i < 6; i++)
+//		printadd();
+//	return 0;
+//}
+//#include <stdio.h>
+//extern int a;
+//int main()
+//{
+//	printf("%d", a);
+//	return 0;
+//}
+// static修饰函数
+//#include <stdio.h>
+//extern void print(int x);
+//int main()
+//{
+//	int a=0;
+//	print(a);
+//	return 0;
+//}
+//#include <stdio.h>
+//extern int add(int, int);
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int sum = add(a, b);
+//	printf("%d", sum);
+//	return 0;
+//    
+//}
+//define定义宏
+//#include <stdio.h>
+//#define add(x,y) ((x)+(y))
+//int main()
+//{
+//	printf("%d", 2*add(2, 3));
+//	return 0;
+//}
+//#include <stdio.h>
+//#define add(x,y) x+y
+//int main()
+//{
+//	printf("%d", 2 * add(2, 3));
+//	return 0;
+//}
+#include <stdio.h>
+int main()
+{
+	printf("%d", sizeof(int*));
+	printf("%d", sizeof(char*));
+	printf("%d", sizeof(long*));
+	printf("%d", sizeof(double*));
+	printf("%d", sizeof(float*));
+	printf("%d", sizeof(long long*));
+	return 0;
+}

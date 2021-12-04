@@ -1,3 +1,15 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(510,5): warning MSB8028: 中间目录(x64\Debug\)包含从另一个项目(大学计算机课.vcxproj)共享的文件。   这会导致错误的清除和重新生成行为。
   方法.c
-  大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\大学计算机课\x64\Debug\大学计算机课程.exe
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(226,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(226,9): message : 请考虑在格式字符串中使用“%zd”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(227,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(227,9): message : 请考虑在格式字符串中使用“%zd”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(228,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(228,9): message : 请考虑在格式字符串中使用“%zd”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(229,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(229,9): message : 请考虑在格式字符串中使用“%zd”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(230,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(230,9): message : 请考虑在格式字符串中使用“%zd”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(231,9): warning C4477: “printf”: 格式字符串“%d”需要类型“int”的参数，但可变参数 1 拥有了类型“size_t”
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(231,9): message : 请考虑在格式字符串中使用“%zd”
+  大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\x64\Debug\大学计算机课程.exe
