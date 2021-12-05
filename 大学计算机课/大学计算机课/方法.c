@@ -220,14 +220,31 @@
 //	printf("%d", 2 * add(2, 3));
 //	return 0;
 //}
+//#include <stdio.h>
+//int main()
+//{
+//	printf("%d", sizeof(int*));
+//	printf("%d", sizeof(char*));
+//	printf("%d", sizeof(long*));
+//	printf("%d", sizeof(double*));
+//	printf("%d", sizeof(float*));
+//	printf("%d", sizeof(long long*));
+//	return 0;
+//}
+//struct 可以让C语言创建出新的类型出来
 #include <stdio.h>
+struct stu
+{
+	char name;
+	int age;
+	double score;
+};
 int main()
 {
-	printf("%d", sizeof(int*));
-	printf("%d", sizeof(char*));
-	printf("%d", sizeof(long*));
-	printf("%d", sizeof(double*));
-	printf("%d", sizeof(float*));
-	printf("%d", sizeof(long long*));
+	struct stu a = { "小明",18,90.1};
+	printf("%s %d %lf\n", a.name, a.age,a.score);//结构体变量 成员变量
+	struct stu * p = &a;
+	printf("%s %d %lf\n", (*p).name, (*p).age, (*p).score);
+	printf("%s %d %lf\n", p->name, p->age, p->score);
 	return 0;
 }
