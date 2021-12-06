@@ -248,4 +248,10 @@
 //	printf("%s %d %lf\n", p->name, p->age, p->score);
 //	return 0;
 //}
+//#include "stdio.h"
+//void main()
+//{
+//    char a[11] = {'I',' ','a','m',' ','a',' ','b','o','y'};
+//    printf("%s\n", a);
+//}
 

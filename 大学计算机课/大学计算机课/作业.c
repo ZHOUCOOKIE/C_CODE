@@ -386,3 +386,53 @@
 //	}
 //	return 0;
 //}
+//输出1的阶乘加到10的阶乘
+//#include <stdio.h>
+//int main()
+//{
+//	int a = 1;
+//	int b = 0;
+//	int sum = 0;
+//	int ret = 1;
+//	//for (a=1; a <= 10; a++)
+//	//{
+//	//	b=a;
+//	//	ret = 1;
+//	//	for (; b >= 1; b--)
+//	//		ret *= b;
+//	//	sum += ret;
+//	//}效率太低
+//	for (a = 1; a <= 3; a++)
+//	{
+//		ret *= a;
+//		sum += ret;
+//	}
+//	printf("%d", sum);
+//	return 0;
+//}
+//折半查找
+#include <stdio.h>
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+	int k = 17;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	int left = 0;
+	int right = sz - 1;
+	while (left <= right)
+	{
+		int mid = (left + right) / 2;
+		if (arr[mid] < k)
+			left = mid + 1;
+		else if (arr[mid] > k)
+			right = mid - 1;
+		else
+		{
+			printf("找到了，下标为%d", mid);
+			return 0;
+		}
+	}
+	if (left > right)
+		printf("找不到这个数字了");
+	return 0;
+}

@@ -528,6 +528,18 @@
 //		printf("\n");
 //	}
 //}
+//#include <stdio.h>
+//#include<string.h>
+//int main()
+//{
+//    char str[15];
+//    printf("请从键盘输入一个字符串\n");
+//    gets(str);
+//    printf("你输入的字符串是：\n");
+//    puts(str);
+//    system("PAUSE");
+//    return 0;
+//}
 
 
 
