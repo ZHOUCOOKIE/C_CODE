@@ -1,6 +1,2 @@
-﻿  方法.c
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(245,9): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(247,9): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(248,9): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int”
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\方法.c(244,1): warning C4047: “初始化”:“char”与“char [5]”的间接级别不同
+﻿  实验课.c
   大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\Debug\大学计算机课程.exe

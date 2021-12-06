@@ -462,7 +462,72 @@
 //{
 //
 //}
-
+//#include "stdio.h"
+//void main()
+//{
+//	int a[4] = { 0,1,2,3 };
+//	printf("\n%d  %d  %d  %d\n", a[0], a[1], a[2], a[3]);
+//}
+//#include "stdio.h"
+//void main()
+//{
+//	int a[4]; 
+//	a[0] = 2; a[1] = 4; a[2] = 6; a[3] = 8;
+//	printf("\n%d %d %d %d\n", a[0], a[1], a[2], a[3]);
+//}
+//#include "stdio.h"
+//void main()
+//{
+//	int i, a[4];
+//	for (i = 0; i < 4; i++)
+//		scanf("%d", &a[i]);
+//	printf("\n");
+//	for (i = 0; i < 4; i++)
+//		printf("%d  ", a[i]);
+//	printf("\n");
+//}
+//
+//#include "stdio.h"
+//void main()
+//{
+//    int i, a[10];                     /* 定义循环变量i和一维数组a */
+//    for (i = 0; i <= 9; i++)
+//        scanf("%d", &a[i]);
+//    for (i = 9; i >= 0;i--)      /* 请补充完整循环语句 */
+//        printf("%d  ", a[i]);          /* 按照逆序输出 */
+//    printf("\n");
+//}
+//#include "stdio.h"
+//void main()
+//{
+//	int i, j, a[2][3] = { {1,2,3},{4,5,6} };
+//	for (i = 0; i < 2; i++)
+//	{
+//		for (j = 0; j < 3; j++)
+//			printf("%d ", a[i][j]);
+//		printf("\n");
+//	}
+//}
+//
+//#include <stdio.h>
+//#define N 6		
+//void main(void) {
+//	int a[N][N];
+//	int i, j;
+//	for (i = 0; i < N; i++) {
+//		a[i][0] = 1;
+//		a[i][i] = 1;
+//	}
+//	for (i = 2; i < N; i++)
+//		for (j = 1; j < i; j++)
+//			a[i][j] = a[i - 1][j] + a[i - 1][j - 1];
+//	printf("杨辉三角为：\n");
+//	for (i = 0; i < N; i++) {
+//		for (j = 0; j < i + 1; j++)
+//			printf("%5d", a[i][j]);
+//		printf("\n");
+//	}
+//}
 
 
 

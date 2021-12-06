@@ -346,4 +346,43 @@
 //	else
 //		return 1;
 //}
-
+// 
+// 
+//猜数字游戏，预定一个两位整数（rand()函数产生一个伪随机整数(short型)，
+// 引入头文件<stdlib.h>），游戏人输入一个整数，提示是大了还是小了，直到游戏人输入正确。
+//头文件引入#include<time.h>
+//产生随机种子：srand(static_cast<unsigned int>(time(NULL)));
+//这样每次运行程序，可产生不一样的随机数。
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int main()
+//{
+//	int random = 0;
+//	int guess = 0;
+//	printf("这是猜数字游戏，请输入数字：");
+//	scanf("%d", &guess);
+//	srand((unsigned)time(NULL));//初始化随机数种子
+//	random = rand() % 89 + 10;//将随机值赋值给random
+//	while (1)
+//	{
+//		if (random > guess)
+//		{
+//			printf("您猜的数字%d小了\n", guess);
+//			printf("请继续输入数字：");
+//			scanf("%d", &guess);
+//		}
+//		else if (random < guess)
+//		{
+//			printf("您猜的数字%d大了\n", guess);
+//			printf("请继续输入数字：");
+//			scanf("%d", &guess);
+//		}
+//		else
+//		{
+//			printf("您猜对了");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
