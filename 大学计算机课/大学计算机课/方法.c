@@ -232,22 +232,23 @@
 //	return 0;
 //}
 //struct 可以让C语言创建出新的类型出来
-//#include <stdio.h>
-//struct stu
-//{
-//	char name;
-//	int age;
-//	double score;
-//};
-//int main()
-//{
-//	struct stu a = { "小明",18,90.1};
-//	printf("%s %d %lf\n", a.name, a.age,a.score);//结构体变量 成员变量
-//	struct stu * p = &a;
-//	printf("%s %d %lf\n", (*p).name, (*p).age, (*p).score);
-//	printf("%s %d %lf\n", p->name, p->age, p->score);
-//	return 0;
-//}
+#include <stdio.h>
+struct stu
+{
+	char name[20];
+	int age;
+	double score;
+};
+int main()
+{
+	struct stu a = { "小明",18,90.1};
+	//a.name = -1;
+	printf("%s %d %lf\n", a.name, a.age,a.score);//结构体变量 成员变量
+	struct stu * p = &a;
+	printf("%s %d %lf\n", (*p).name, (*p).age, (*p).score);
+	printf("%s %d %lf\n", p->name, p->age, p->score);
+	return 0;
+}
 //#include "stdio.h"
 //void main()
 //{

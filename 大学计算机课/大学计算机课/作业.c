@@ -411,28 +411,51 @@
 //	return 0;
 //}
 //折半查找
-#include <stdio.h>
-int main()
-{
-	int arr[] = { 1,2,3,4,5,6,7,8,9 };
-	int k = 17;
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int left = 0;
-	int right = sz - 1;
-	while (left <= right)
-	{
-		int mid = (left + right) / 2;
-		if (arr[mid] < k)
-			left = mid + 1;
-		else if (arr[mid] > k)
-			right = mid - 1;
-		else
-		{
-			printf("找到了，下标为%d", mid);
-			return 0;
-		}
-	}
-	if (left > right)
-		printf("找不到这个数字了");
-	return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9 };
+//	int k = 17;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left <= right)
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] < k)
+//			left = mid + 1;
+//		else if (arr[mid] > k)
+//			right = mid - 1;
+//		else
+//		{
+//			printf("找到了，下标为%d", mid);
+//			return 0;
+//		}
+//	}
+//	if (left > right)
+//		printf("找不到这个数字了");
+//	return 0;
+//}
+//演示多个字符从两端移动，向中间汇聚
+//#include <stdio.h>
+//#include <string.h>
+//#include <windows.h>
+//int main()
+//{
+//	char arr1[20] = {"hello world"};
+//	char arr2[20] = {"***********"};
+//	int left = 0;
+//	int right = strlen(arr1)-1;
+//	while (left <= right)
+//	{
+//		arr2[left] = arr1[left];
+//		arr2[right] = arr1[right];
+//		printf("%s", arr2);
+//		Sleep(1000);
+//		system("cls");
+//		left++;
+//		right--;
+//	}
+//	printf("%s", arr2);
+//	return 0;
+//}
