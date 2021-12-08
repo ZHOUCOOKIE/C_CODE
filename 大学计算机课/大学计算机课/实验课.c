@@ -540,6 +540,46 @@
 //    system("PAUSE");
 //    return 0;
 //}
-
-
-
+//下面程序的功能是用strcat函数实现将字符串2连接到字符串1的后面并输出
+//#include "stdio.h"
+//#include <string.h>
+//void main()
+//{
+//    char str1[80] = "This Is a ", str2[80] = "c Program";
+//    printf("String1 is: %s\n", str1);
+//    printf("String2 is: %s\n", str2);
+//    strcat(str1, str2);          /*使用strcat函数实现，注意其格式*/
+//    printf("Result is: %s\n", str1);
+//}
+//下面程序的功能是：输出一维数组a中的最小值及其下标。请在程序中的横线上填入正确的内容。
+//#include "stdio.h"
+//void main()
+//{
+//    int i, p = 0, a[10],temp, k=0;               /* 定义a为数组名，p为下标名 */
+//    for (i = 0; i < 10; i++)
+//        scanf("%d", &a[i]);
+//    for (i = 1; i < 10; i++)
+//        if (a[i] < a[p]) 
+//        {
+//            temp=a[i];
+//            a[i] = a[p];
+//            a[p] = temp;
+//            k++;
+//        }
+//    p = k;
+//    printf("%d,%d", a[p], p);       /* 输出一维数组a中的最小值及其下标 */
+//}
+//
+//#include "stdio.h"
+//void main()
+//{
+//    int i, p = 0, a[10];               /* 定义a为数组名，p为下标名 */
+//    for (i = 0; i < 10; i++)
+//        scanf("%d", &a[i]);
+//    for (i = 1; i < 10; i++)
+//        if (a[i] < a[p])
+//        {
+//            p = i;
+//        }
+//    printf("%d,%d", a[p], p);       /* 输出一维数组a中的最小值及其下标 */
+//}

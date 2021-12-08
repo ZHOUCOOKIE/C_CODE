@@ -459,3 +459,73 @@
 //	printf("%s", arr2);
 //	return 0;
 //}
+//完成对数组a排序，然后把数组b的数据按序插入到数组1里。
+//数组a[] = { 12,6,3,34,20,80,23,12,90,56 }, 数组b[3] = { 11,60,7 };
+//#include <stdio.h>
+//
+//int main()
+//{
+//	int a[] = { 12,6,3,34,20,80,23,12,90,56 };
+//	int b[] = { 11,60,7 };
+//	int i = 0;
+//	int k = 0;
+//	for (; i < (sizeof(a) / sizeof(a[0])); i++)
+//	{
+//		k = i;
+//		for (; i < (sizeof(a) / sizeof(a[0])); i++)
+//			if (a[k] > a[i])
+//			{
+//				int temp;
+//				temp = a[i];
+//				a[i] = a[k];
+//				a[k] = temp;
+//			}
+//		i = k;
+//	}
+//	for (i = 0; i < (sizeof(b) / sizeof(b[0])); i++)
+//	{
+//		for(; i<(sizeof(a) / sizeof(a[0]));i++)
+//			if (a[i] > b[k])
+//			{
+//
+//				a[i] = b[k];
+//		    }
+//	}
+//	for (i = 0; i < (sizeof(a)/sizeof(a[0])); i++)
+//		printf("%d ", a[i]);
+//	return 0;
+//}
+//求一个4×4矩阵的主次对角线元素之和，填空并运行程序。
+//编程提示：
+//（1）．定义一个4行4列的二维数组a，用rand（）函数赋值，要求数据不大于100。
+//（2）．用循环求和，并注意矩阵对角上线元素的特征是：行下标和列下标相同。
+//（3）．输出主次对角线元素之和。
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#define N 4
+int main()
+{
+	int a[N][N];
+	int i = 0;
+	int k = 0;
+	int sum = 0;
+	srand((unsigned int)time(NULL));
+	for (i = 0; i < N; i++)//给二维数组附上随机值
+		for (k = 0; k < N; k++)
+			a[i][k] = rand() % 99 + 1;
+	for (i = 0; i < N; i++)//打印二维数组
+		for (k = 0; k < N; k++)
+		{
+			printf("%2d ", a[i][k]);
+			if (k == 3)
+				printf("\n");
+		}
+	for (i = 0, k = 0; i < N && k < N; i++, k++)
+		sum += a[i][k];
+	printf("矩阵主对角线之和为%d\n", sum);
+	for (i = 0, k = N - 1,sum = 0; i < N && k >= 0; i++, k--)
+		sum += a[i][k];
+	printf("矩阵次对角线之和为%d", sum);
+	return 0;
+}
