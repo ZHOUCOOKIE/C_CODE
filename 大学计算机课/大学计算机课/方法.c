@@ -255,4 +255,27 @@
 //    char a[11] = {'I',' ','a','m',' ','a',' ','b','o','y'};
 //    printf("%s\n", a);
 //}
-
+//二维数组的指针变量
+//# include <stdio.h>
+//int main(void) {
+//    int a[4][3] = {
+//        {1, 2, 12},
+//        {3, 4, 34},
+//        {5, 6, 56},
+//        {7, 8, 78}
+//    };
+//    int(*pArr)[3];  //一定要加上括号，因为[]的优先级高于*
+//    pArr = a;
+//    for (int i = 0; i < 4; i++)
+//        for (int j = 0; j < 3; j++)
+//            printf("%d ", pArr[i][j]);
+//    return 0;
+//}
+////定义二维字符数组
+//#include <stdio.h>
+//int main()
+//{
+//	char name[3][20] = { "小米","华为","谷歌" };
+//	printf("%s %s %s", name[0], name[1], name[2]);
+//	return 0;
+//}

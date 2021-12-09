@@ -500,32 +500,128 @@
 //（1）．定义一个4行4列的二维数组a，用rand（）函数赋值，要求数据不大于100。
 //（2）．用循环求和，并注意矩阵对角上线元素的特征是：行下标和列下标相同。
 //（3）．输出主次对角线元素之和。
+//#include <stdio.h>
+//#include <time.h>
+//#include <stdlib.h>
+//#define N 4
+//int main()
+//{
+//	int a[N][N];
+//	int i = 0;
+//	int k = 0;
+//	int sum = 0;
+//	srand((unsigned int)time(NULL));
+//	for (i = 0; i < N; i++)//给二维数组附上随机值
+//		for (k = 0; k < N; k++)
+//			a[i][k] = rand() % 99 + 1;
+//	for (i = 0; i < N; i++)//打印二维数组
+//		for (k = 0; k < N; k++)
+//		{
+//			printf("%2d ", a[i][k]);
+//			if (k == 3)
+//				printf("\n");
+//		}
+//	for (i = 0, k = 0; i < N && k < N; i++, k++)
+//		sum += a[i][k];
+//	printf("矩阵主对角线之和为%d\n", sum);
+//	for (i = 0, k = N - 1,sum = 0; i < N && k >= 0; i++, k--)
+//		sum += a[i][k];
+//	printf("矩阵次对角线之和为%d", sum);
+//	return 0;
+//}
+//一个学习小组有 5 个人，每个人有 3 门课程的考试成绩，
+//分别是语文、数学、英语，求该小组各科的最高分、最低分，以及每人的平均分。
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <time.h>
+//int Max(int score[][3], char subject[][3], int i)//计算各科最高分
+//{
+//	int temp = 0;
+//	int max = 0;
+//	for (int k = 0; k < 5; k++)
+//	{
+//		if (max < score[k][i])
+//			max = score[k][i];
+//	}
+//	printf("该学习小组%s的最高分为%d\n", subject, max);
+//
+//}
+//int Min(int score[][3], char subject[][3], int i)//计算各科最低分
+//{
+//	int temp = 0;
+//	int min = score[0][i];
+//	for (int k = 0; k < 5; k++)
+//	{
+//		if (min > score[k][i])
+//		    min = score[k][i];
+//	}
+//	
+//	printf("该学习小组%s的最低分为%d\n",subject,min);
+//}
+//
+//int Aver(int score[][3],char name[][3], int i)//计算各科平均分
+//{
+//	float aver = 0;
+//	aver = (score[i][0] + score[i][1] + score[i][2]) / 3.0;
+//	printf("%s同学的平均分为：%.2lf\n", name, aver);
+//}
+//int main()
+//{
+//	int score[5][3]={0};
+//	char subject[3][20] = { "语文","数学","英语" };
+//	char name[5][20] = { "小明","小王","小乐","小强","小刘" };
+//	int i = 0;
+//	int k = 0;
+//
+//	srand((unsigned int)time(NULL));
+//	for (i = 0; i < 5; i++)//初始化成绩范围50-100
+//		for (k = 0; k < 3; k++)
+//			score[i][k] = rand() % 50 + 50;
+//	printf("             语文  数学  英语\n");
+//
+//	for (i = 0; i < 5; i++)//打印名字和成绩
+//	{
+//		printf("%s的成绩为：", name[i]);
+//		for (k = 0; k < 3; k++)
+//			printf("%d    ",score[i][k]);
+//		printf("\n");
+//	}
+//
+//	Max(score, subject[0], 0);//调用各种函数
+//	Max(score, subject[1], 1);
+//	Max(score, subject[2], 2);
+//	Min(score, subject[0], 0);
+//	Min(score, subject[1], 1);
+//	Min(score, subject[2], 2);
+//	Aver(score, name[0], 0);
+//	Aver(score, name[1], 1);
+//	Aver(score, name[2], 2);
+//	Aver(score, name[3], 3);
+//	Aver(score, name[4], 4);
+//
+//	return 0;
+//}
+//建立一二维字符数组，输入10个学生的姓名
+//然后按升序排序，然后按序插入一学生信息。
 #include <stdio.h>
-#include <time.h>
-#include <stdlib.h>
-#define N 4
+#include <string.h>
 int main()
 {
-	int a[N][N];
+	char name[11][20];
 	int i = 0;
-	int k = 0;
-	int sum = 0;
-	srand((unsigned int)time(NULL));
-	for (i = 0; i < N; i++)//给二维数组附上随机值
-		for (k = 0; k < N; k++)
-			a[i][k] = rand() % 99 + 1;
-	for (i = 0; i < N; i++)//打印二维数组
-		for (k = 0; k < N; k++)
+	char change[20]={0};
+	for (i = 0; i < 10; i++)
+		scanf("%s", name[i]);
+	for (i = 0; i < 10; i++)
+		for (i = 0; i < 10; i++)
 		{
-			printf("%2d ", a[i][k]);
-			if (k == 3)
-				printf("\n");
+			if (strcmp(change,name[i]) < 0)
+			{
+				strcpy(change, name[i]);
+			}
 		}
-	for (i = 0, k = 0; i < N && k < N; i++, k++)
-		sum += a[i][k];
-	printf("矩阵主对角线之和为%d\n", sum);
-	for (i = 0, k = N - 1,sum = 0; i < N && k >= 0; i++, k--)
-		sum += a[i][k];
-	printf("矩阵次对角线之和为%d", sum);
+
+	for(i=0;i<10;i++)
+	    printf("%s", name[i]);
 	return 0;
 }
