@@ -601,27 +601,90 @@
 //
 //	return 0;
 //}
+//#include <stdio.h>
+//
+//void f(int* x, int* y)
+//{
+//	int t;
+//	t = *x; *x = *y; *y = t;
+//}
+//
+//void main()
+//{
+//	int a[8] = { 1,2,3,4,5,6,7,8 }, i, * p, * q;
+//	p = a, q = &a[7];
+//	while (p < q)
+//	{
+//		f(p, q);
+//		p++;
+//		q--;
+//	}
+//	for (i = 0; i < 8; i++)
+//		printf("%d,", a[i]);
+//}
+//#include <stdio.h>
+//void main()
+//
+//{
+//	int a[2][3] = { {1,2,3},{4,5,6} };
+//	int(*p)[3] = &a[1];
+//	int(*q)[3] = a;
+//	printf("%d,%d\n", (*p)[0], (*p)[1]);
+//	printf("%d,%d", *q[0], *q[1]);
+//}
+//#include <stdio.h>
+//#include <string.h>
+//#include <stdlib.h>
+//
+//fun(char* s)
+//{
+//	strcpy(s, "example");
+//}
+//
+//main()
+//
+//{
+//	char t[10];
+//	char* s = t;
+//	fun(s);
+//	puts(s);
+//}
 //建立一二维字符数组，输入10个学生的姓名
 //然后按升序排序，然后按序插入一学生信息。
 #include <stdio.h>
 #include <string.h>
 int main()
 {
-	char name[11][20];
+	char name[11][20]={0};
 	int i = 0;
-	char change[20]={0};
+	int j = 0;
+	int k = 0;
+	char chname[20]={0};
+	printf("请输入十个名字：");
 	for (i = 0; i < 10; i++)
 		scanf("%s", name[i]);
-	for (i = 0; i < 10; i++)
-		for (i = 0; i < 10; i++)
-		{
-			if (strcmp(change,name[i]) < 0)
+	printf("请输入一位学生姓名：");
+	scanf("%s", chname);
+	strcpy(name[10], chname);
+	for (i = 0; i < 11; i++)//选择排序
+	{
+		k = i;
+		for (j = i + 1; j < 11; j++)
+		
+			if (strcmp(name[k], name[j]) > 0)
 			{
-				strcpy(change, name[i]);
+				k = j;
 			}
+		if (k != i)
+		{
+			strcpy(chname, name[i]);
+			strcpy(name[i], name[k]);
+			strcpy(name[k], chname);
 		}
 
-	for(i=0;i<10;i++)
-	    printf("%s", name[i]);
+	}
+
+	for(i=0;i<11;i++)
+	    printf("%s\n", name[i]);
 	return 0;
 }
