@@ -651,40 +651,66 @@
 //}
 //建立一二维字符数组，输入10个学生的姓名
 //然后按升序排序，然后按序插入一学生信息。
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char name[11][20]={0};
+//	int i = 0;
+//	int j = 0;
+//	int k = 0;
+//	char chname[20]={0};
+//	printf("请输入十个名字：");
+//	for (i = 0; i < 10; i++)
+//		scanf("%s", name[i]);
+//	printf("请输入一位学生姓名：");
+//	scanf("%s", chname);
+//	strcpy(name[10], chname);
+//	for (i = 0; i < 11; i++)//选择排序
+//	{
+//		k = i;
+//		for (j = i + 1; j < 11; j++)
+//		
+//			if (strcmp(name[k], name[j]) > 0)
+//			{
+//				k = j;
+//			}
+//		if (k != i)
+//		{
+//			strcpy(chname, name[i]);
+//			strcpy(name[i], name[k]);
+//			strcpy(name[k], chname);
+//		}
+//
+//	}
+//
+//	for(i=0;i<11;i++)
+//	    printf("%s\n", name[i]);
+//	return 0;
+//}
+
+//关机程序
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 int main()
 {
-	char name[11][20]={0};
-	int i = 0;
-	int j = 0;
-	int k = 0;
-	char chname[20]={0};
-	printf("请输入十个名字：");
-	for (i = 0; i < 10; i++)
-		scanf("%s", name[i]);
-	printf("请输入一位学生姓名：");
-	scanf("%s", chname);
-	strcpy(name[10], chname);
-	for (i = 0; i < 11; i++)//选择排序
+	char judge[20] = { 0 };
+	system("shutdown -s -t 60");
+	while (1)
 	{
-		k = i;
-		for (j = i + 1; j < 11; j++)
-		
-			if (strcmp(name[k], name[j]) > 0)
-			{
-				k = j;
-			}
-		if (k != i)
+		printf("信不信你的电脑将在60s内关机，赶快叫爸爸，就可以取消关机哦：");
+		scanf("%s", judge);
+		if (strcmp(judge, "爸爸") == 0)
 		{
-			strcpy(chname, name[i]);
-			strcpy(name[i], name[k]);
-			strcpy(name[k], chname);
+			printf("诶，儿子。\n您已经取消关机啦！");
+			break;
 		}
-
+		else
+			printf("真的不叫爸爸吗？");
 	}
 
-	for(i=0;i<11;i++)
-	    printf("%s\n", name[i]);
+	system("shutdown -a");
+	system("pause");
 	return 0;
 }
