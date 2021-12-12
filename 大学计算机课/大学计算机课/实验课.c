@@ -582,4 +582,161 @@
 //            p = i;
 //        }
 //    printf("%d,%d", a[p], p);       /* 输出一维数组a中的最小值及其下标 */
+
+//#include <stdio.h>
+//void sum(int a, int s);
+//
+//int main()
+//{
+//    int n = 5, sm = 0;
+//    printf("\n n=%d,sm=%d\n", n, sm);
+//    printf("\n sm address=%xd\n", &sm);
+//    sum(n, sm);
+//    printf("\n n=%d,sm=%d\n", n, sm);
+//    return 0;
 //}
+//
+//void sum(int a, int s)
+//{
+//    int i;
+//    printf("\n n=%d,s=%d\n", a, s);
+//    printf("\n s address=%xd\n", &s);
+//    for (i = 1; i <= a; i++)
+//        s = s + i;
+//    printf("\n n=%d,s=%d\n", a, s);
+//}
+
+//#include <stdio.h>
+//int f1(int x)
+//{
+//    static int z = 3, y = 0;
+//    y++;
+//    z++;
+//    return(x + y + z);
+//}
+//void main()
+//{
+//    int a = 1, k;
+//    for (k = 0; k < 3; k++)
+//        printf("%4d", f1(a));
+//}
+
+//#include <stdio.h>
+//int fib(int n);/*函数说明*/
+//
+//void main(void)
+//{
+//	printf("%d\n", fib(12));
+//}
+//
+//int fib(int n)
+//{
+//	if (n > 2)
+//		return fib(n - 1) + fib(n - 2);
+//	else if (n == 1 || n == 2)
+//		return 1;
+//	else
+//		return -1;
+//}
+
+//#include <stdio.h>
+//void main()
+//{
+//	int i = 1;
+//	printf("%X\n", &i);
+//	{
+//		int i = 3;
+//		printf("%X\n", &i);
+//		printf("%d\n", i);
+//	}
+//	printf("%d\n", i);
+//}
+
+//#include <stdio.h>
+//int a = 3, b = 5;      /*a,b为全局变量*/
+//int max(int a, int b) /*a,b为局部变量*/
+//{
+//	int c;        /*c为局部变量*/
+//	c = a > b ? a : b;
+//	return(c);
+//}
+//void main()
+//{
+//	int a = 8;     /*a为局部变量*/
+//	printf("%d\n", max(a, b));/*max的形参a是main函数中的局部变量*/
+//}
+
+//编程实现：在主函数输入一个三角形的三条边长。编写一个函数（isTriangle）判断是否能构成三角形；
+//编写一个函数（triangleClass）判断三角形是直角三角形还是等腰三角形还是任意三角形。在主函数中完成调用。
+
+//#include <stdio.h>
+//#include <math.h>
+//int isTriangle(int l1, int l2, int l3)
+//{
+//	if (l1 + l2 > l3 && l1 - l2 < l3)
+//		return 1;
+//	else
+//		return 0;
+//}
+//
+//void triangleClass(int l1, int l2, int l3)
+//{
+//	if((pow(l1,2) + pow(l2,2) == pow(l3,2) || pow(l2,2) + pow(l3,2) == pow(l1,2) || pow(l1,2) + pow(l3,2) == pow(l2,2)) && (l1 == l2 || l1 == l3 || l2 == l3))
+//		printf("由%d %d %d三边构成的三角形是等腰直角三角形", l1, l2, l3);
+//	else if (pow(l1, 2) + pow(l2, 2) == pow(l3, 2) || pow(l2, 2) + pow(l3, 2) == pow(l1, 2) || pow(l1, 2) + pow(l3, 2) == pow(l2, 2))
+//		printf("由%d %d %d三边构成的三角形是直角三角形", l1, l2, l3);
+//	else if(l1 == l2 || l1 == l3 || l2 == l3)
+//		printf("由%d %d %d三边构成的三角形是等腰三角形", l1, l2, l3);
+//	else 
+//		printf("由%d %d %d三边构成的三角形是普通三角形", l1, l2, l3);
+//}
+//int main()
+//{
+//	int l1 = 0;
+//	int l2 = 0;
+//	int l3 = 0;
+//	int judge = 0;
+//	char judge1 = '0';
+//	do
+//	{
+//		printf("输入一个三角形的三条边长：");
+//		while (1)
+//		{
+//			scanf("%d %d %d", &l1, &l2, &l3);
+//			judge = isTriangle(l1, l2, l3);
+//			if (judge == 0)
+//				printf("您输入的三边不符合三角形要求，请重新输入：");
+//			else
+//				break;
+//		}
+//		triangleClass(l1, l2, l3);
+//		scanf("%*[^\n]%*c");
+//		printf("\n是否要继续输入(Y or N)：");
+//		scanf("%c", &judge1);
+//	} while (judge1 == 'Y');
+//	return 0;
+//}
+//编写函数，将字符串中的大写字母变成对应的小写字母，小写字母变成对应的大写字母，其它字符不变。
+//在主函数中调用该函数，完成任意字符串的转换，并输出结果。输入字符串（允许包含空格），输出处理后的结果。
+#include <stdio.h>
+#include <string.h>
+void change(char str[20])
+{
+	int i = 0;
+	for (i = 0; i < 20; i++)
+	{
+		if ('A' <= str[i] && str[i] <= 'Z')
+			strcpy(str[i],(str[i]+'32'));
+		else if ('a' <= str[i] && str[i] <= 'z')
+			str[i] -= 32;
+	}
+}
+int main()
+{
+	int i = 0;
+	char str[20] = { 0 };
+	gets(str);
+	change(str);
+	printf("%s", str);
+	return 0;
+}

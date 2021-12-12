@@ -690,27 +690,27 @@
 //}
 
 //关机程序
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main()
-{
-	char judge[20] = { 0 };
-	system("shutdown -s -t 60");
-	while (1)
-	{
-		printf("信不信你的电脑将在60s内关机，赶快叫爸爸，就可以取消关机哦：");
-		scanf("%s", judge);
-		if (strcmp(judge, "爸爸") == 0)
-		{
-			printf("诶，儿子。\n您已经取消关机啦！");
-			break;
-		}
-		else
-			printf("真的不叫爸爸吗？");
-	}
-
-	system("shutdown -a");
-	system("pause");
-	return 0;
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//#include <string.h>
+//int main()
+//{
+//	char judge[20] = { 0 };
+//	system("shutdown -s -t 60");
+//	while (1)
+//	{
+//		printf("信不信你的电脑将在60s内关机，赶快叫爸爸，就可以取消关机哦：");
+//		scanf("%s", judge);
+//		if (strcmp(judge, "爸爸") == 0)
+//		{
+//			printf("诶，儿子。\n您已经取消关机啦！");
+//			break;
+//		}
+//		else
+//			printf("真的不叫爸爸吗？");
+//	}
+//
+//	system("shutdown -a");
+//	system("pause");
+//	return 0;
+//}
