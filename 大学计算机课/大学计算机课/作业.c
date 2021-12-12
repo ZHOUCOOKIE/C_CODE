@@ -788,3 +788,12 @@
 //	printf("%s", str);
 //	return 0;
 //}
+
+include <stdio.h>
+int main()
+{
+	int a[20];
+	for (int i = 0; , i < 30; i++)
+		scan("%d", a[i]);
+	return 0;
+}
