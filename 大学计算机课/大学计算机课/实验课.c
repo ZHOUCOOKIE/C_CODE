@@ -665,4 +665,50 @@
 //	int a = 8;     /*a为局部变量*/
 //	printf("%d\n", max(a, b));/*max的形参a是main函数中的局部变量*/
 //}
+//#include <stdio.h>
+//void main()
+//{
+//	int a, b;
+//	int* pointer_1, * pointer_2;
+//	a = 100; b = 10;
+//	pointer_1 = &a;
+//	pointer_2 = &b;
+//	printf("%d,%d\n", a, b);
+//	printf("%d,%d\n", *pointer_1, *pointer_2);
+//}
+//#include <stdio.h>
+//void swap(int* p1, int* p2)
+//{
+//	int p;
+//	p = *p1;
+//	*p1 = *p2;
+//	*p2 = p;
+//}
+//void main()
+//{
+//	int a, b;
+//	int* p, * q;
+//	scanf("%d,%d", &a, &b);
+//	p = &a; q = &b;
+//	if (a < b) swap(p, q);
+//	printf("\n%d,%d\n", a, b);
+//}
+//用指针法输入 12 个数,然后按每行 4 个数输出
+//#include <stdio.h>
+//int main()
+//{
+//	int a[12];
+//	int i = 0;
+//	int* p = a;
+//	for (i = 0; i < 12; i++)
+//		scanf("%d", p++);
+//	p = a;
+//	for (i = 0; i < 12; i++)
+//	{
+//		if (i % 4 == 0)
+//			printf("\n");
+//		printf("%d ", *p++);
+//	}
+//	return 0;
+//}
 
