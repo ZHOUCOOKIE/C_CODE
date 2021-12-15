@@ -465,47 +465,54 @@
 //
 //int main()
 //{
-//	int a[] = { 12,6,3,34,20,80,23,12,90,56 };
+//	int a[13] = { 12,6,3,34,20,80,23,12,90,56 };
 //	int b[] = { 11,60,7 };
 //	int i = 0;
 //	int k = 0;
-//	for (; i < (sizeof(a) / sizeof(a[0])); i++)
+//	int temp = 0;
+//	for (; i < 10; i++)
 //	{
 //		k = i;
-//		for (; i < (sizeof(a) / sizeof(a[0])); i++)
+//		for (; i < 10; i++)
 //			if (a[k] > a[i])
 //			{
-//				int temp;
 //				temp = a[i];
 //				a[i] = a[k];
 //				a[k] = temp;
 //			}
 //		i = k;
 //	}
-//	for (i = 0; i < (sizeof(b) / sizeof(b[0])); i++)
+//	for (k = 0; k < 3; k++)
 //	{
-//		for(; i<(sizeof(a) / sizeof(a[0]));i++)
+//		for(i = 0; i < 13; i++)
 //			if (a[i] > b[k])
 //			{
-//
-//				a[i] = b[k];
+//				temp = a[i];
+//				a[i] = b[k];//插入到比他大的那个数的位置
+//				
+//				for(int j = 11; j > i; j--)//从最后一个元素依次往后移动一个位置
+//				{
+//					a[j + 1] = a[j];
+//				}
+//				a[i + 1] = temp;//将刚才把他大的数的那个赋值给下一个元素
+//				break;
 //		    }
 //	}
-//	for (i = 0; i < (sizeof(a)/sizeof(a[0])); i++)
+//	for (i = 0; i < 13; i++)
 //		printf("%d ", a[i]);
 //	return 0;
 //}
-#include <stdio.h>
-int main()
-{
-	int a[5] = { 1,2,3 };
-	int b[] = { 4,5 };
-	a[3] = b[0];
-	a[4] = b[1];
-	for (int i = 0; i < 5; i++)
-		printf("%d ", a[i]);
-	return 0;
-}
+//#include <stdio.h>
+//int main()
+//{
+//	int a[5] = { 1,2,3 };
+//	int b[] = { 4,5 };
+//	a[3] = b[0];
+//	a[4] = b[1];
+//	for (int i = 0; i < 5; i++)
+//		printf("%d ", a[i]);
+//	return 0;
+//}
 //求一个4×4矩阵的主次对角线元素之和，填空并运行程序。
 //编程提示：
 //（1）．定义一个4行4列的二维数组a，用rand（）函数赋值，要求数据不大于100。
@@ -802,3 +809,87 @@ int main()
 //1、编写一个程序，利用函数，判断作为参数输入的一个整型数组是否为回文。
 //例如，若数组值为10, 5, 30, 67, 30, 5, 10就是一个回文。 （用指针实现）
 //提示：定义两个指针，P指向数组第一个元素，q指向数组最后一个元素，当p < q时进行循环比较* p和* q的值。
+
+
+
+
+
+//下面程序的功能是：根据输入的整数x和n，利用函数fact实现求x的n次方xn。
+//例如：输入：2，3       输出23 = 8
+//#include "stdio.h"
+//void main()
+//{
+//    long int  fact(long x, long n);              /*声明fact函数*/
+//    long int  x;
+//    long int  n;
+//    printf("please enter X and  N(>=0): ");
+//    scanf("%ld,%ld", &x, &n);
+//    printf("%ld,%ld=%ld", x, n, fact(x,n-1));  /*调用fact函数 */
+//}
+//
+//long int  fact(long int x, long int n)        /*定义fact函数求xn */
+//{
+//    long int  i, s;
+//    s = x;                       /*求累积变量的初始化*/
+//    if (n == 0)
+//        return 1;
+//    for (i = 1; i <= n; i++)                     /*用循环实现xn*/
+//        s = s * x;
+//    return s;/*返回结果xn*/
+//}
+// 
+// 
+// 
+// 
+//用递归编程解决 猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。
+//第2天早上将剩下的桃子吃掉一半，又多吃了一个。以后每天早上都吃了前一天剩下的一半多一个。
+//到第10天早上想再吃的时候，见只剩下一个桃子了。
+//求第1天共摘了多少桃子？
+//int eat(int day,int remain)//使用静态变量可以
+//{
+//	static int  a;
+//	a = remain;
+//	if (day > 1)
+//	{
+//		a = (a + 1) * 2;
+//		return eat(day - 1, a);
+//	}
+//}
+// 
+//int eat(int day, int remain)//使用自动变量也可以
+//{
+//	int a = remain;
+//	if (day > 1)
+//	{
+//		a = (a + 1) * 2;
+//		return eat(day - 1, a);
+//	}
+//}
+//
+//int  a;//使用全局变量可以
+//int eat(int day,int remain)
+//{
+//	a = remain;
+//	if (day > 1)
+//	{
+//		a = (a + 1) * 2;
+//		return eat(day - 1, a);
+//	}
+//}
+
+#include<stdio.h>
+
+int eat(int day, int remain)
+{
+	int a = remain;
+	if (day > 1)
+	{
+		a = (a + 1) * 2;
+		return eat(day - 1, a);
+	}
+}
+int main()
+{
+	printf("第一天共摘了%d个桃子", eat(10,1));
+	return 0;
+}
