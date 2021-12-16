@@ -876,20 +876,20 @@
 //		return eat(day - 1, a);
 //	}
 //}
-
-#include<stdio.h>
-
-int eat(int day, int remain)
-{
-	int a = remain;
-	if (day > 1)
-	{
-		a = (a + 1) * 2;
-		return eat(day - 1, a);
-	}
-}
-int main()
-{
-	printf("第一天共摘了%d个桃子", eat(10,1));
-	return 0;
-}
+//
+//#include<stdio.h>
+//
+//int eat(int day, int remain)
+//{
+//	int a = remain;
+//	if (day > 1)
+//	{
+//		a = (a + 1) * 2;
+//		return eat(day - 1, a);
+//	}
+//}
+//int main()
+//{
+//	printf("第一天共摘了%d个桃子", eat(10,1));
+//	return 0;
+//}

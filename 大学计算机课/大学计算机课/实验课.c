@@ -711,4 +711,50 @@
 //	}
 //	return 0;
 //}
+//
+//#include<stdio.h>
+//
+//struct tree
+//{
+//	int x;
+//	char* s;
+//}t;
+//
+//func(struct tree t)
+//{
+//	t.x = 10;
+//	t.s = "computer";
+//	return 0;
+//}
+//
+//main()
+//{
+//	t.x = 1;
+//	t.s = "minicomputer";
+//	func(t);
+//	printf("%d,%s\n", t.x, t.s);
+//}
+#include <stdio.h>
 
+struct  sample
+
+{
+	int a, b;
+	char* ch;
+};
+
+void f1(struct sample param)
+{
+	param.a += param.b;
+	printf("%d\n", param.a);
+	printf("%s\n", param.ch);
+}
+
+void main()
+{
+	struct sample arg;
+	arg.a = 1000;
+	arg.b = 100;
+	arg.ch = "abcd";
+	f1(arg);
+}
