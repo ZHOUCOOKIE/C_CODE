@@ -806,14 +806,7 @@
 //	printf("%s", str);
 //	return 0;
 //}
-//1、编写一个程序，利用函数，判断作为参数输入的一个整型数组是否为回文。
-//例如，若数组值为10, 5, 30, 67, 30, 5, 10就是一个回文。 （用指针实现）
-//提示：定义两个指针，P指向数组第一个元素，q指向数组最后一个元素，当p < q时进行循环比较* p和* q的值。
-
-
-
-
-
+// 
 //下面程序的功能是：根据输入的整数x和n，利用函数fact实现求x的n次方xn。
 //例如：输入：2，3       输出23 = 8
 //#include "stdio.h"
@@ -893,3 +886,125 @@
 //	printf("第一天共摘了%d个桃子", eat(10,1));
 //	return 0;
 //}
+//1、编写一个程序，利用函数，判断作为参数输入的一个整型数组是否为回文。
+//例如，若数组值为10, 5, 30, 67, 30, 5, 10就是一个回文。 （用指针实现）
+//提示：定义两个指针，P指向数组第一个元素，q指向数组最后一个元素，当p < q时进行循环比较* p和* q的值。
+//#include <stdio.h>
+//#include <stdlib.h>
+//int is_panlindromic(int* p,int size)
+//{
+//	int left = 0;
+//	int right = size-1;
+//	while (left <= right)
+//	{
+//		if (p[left] == p[right])
+//		{
+//			left++;
+//			right--;
+//		}
+//		else
+//		{
+//			return 0;
+//		}
+//	}
+//	return 1;
+//}
+//int main()
+//{
+//	int size = 0;
+//	int* arr;
+//	int i = 0;
+//	printf("请输入您要输入多少个数字：");
+//	scanf("%d", &size);
+//	arr = (int*)malloc(size*sizeof(int));
+//	printf("\n请输入%d个数字：",size);
+//	fflush(stdin);
+//	for (i = 0; i < size; i++)
+//		scanf("%d", &arr[i]);
+//	if (1 == (is_panlindromic(arr,size)))
+//	{
+//		printf("这组数字是回文的");
+//	}
+//	else
+//	{
+//		printf("这组数字不是回文的");
+//	}
+//	free(arr);
+//	return 0;
+//}
+//用键盘输入5个字符串，首先将它们按照字符串中的字符个数由小到大排列，
+//再分别取出每个字符串的第三个字母合并成一个新的字符串保存到一字符串中，并输出。要求用到指针。
+int main()
+{
+	char str[5][100] = { 0 };
+	int i = 0;
+	int j = 0;
+	char copy[100] = { 0 };
+	char* pstr = str;
+	char newstr[6];
+	printf("请输五个字符串：");
+	for (i = 0; i < 5; i++)
+		scanf("%s", str[i]);
+	for (i = 0; i < 5; i++)
+	{
+		for (j = i + 1; j < 5; j++)
+			if (strlen(str[i]) > strlen(str[j]))
+			{
+				strcpy(copy, str[i]);
+				strcpy(str[i], str[j]);
+				strcpy(str[j], copy);
+			}
+
+	}
+	for (i = 0; i < 6; i++)
+		printf("%s\n", str[i]);
+	for (i = 0; i < 5; i++)
+		strcpy(newstr,pstr[i]);
+	return 0;
+}
+//#include <stdio.h>
+//#include <string.h>
+//void swap(char* p[][100],int i,int j)
+//{
+//	char a[20];
+//	strcpy(a, p[i]);
+//	strcpy(p[i], p[j]);
+//	strcpy(p[j], p[i]);
+//}
+//int main()
+//{
+//	char str[5][100];
+//	int i = 0;
+//	int j = 0;
+//	int k = 0;
+//	char* pstr = str;
+//	char a = 'a';
+//	printf("请输入五个字符串：");
+//	for (i = 0; i < 5; i++)
+//		gets(str[i]);
+//	for (i = 0; i < 5; i++)
+//	{
+//		for(j=i+1;j<4;j++)
+//			if (strlen(str[i]) > strlen(str[j]))//dwd dwda ey qeuhq h
+//			{
+//				swap(str,i,j);
+//			}
+//	}
+//	for (i = 0; i < 5; i++)
+//	printf("%s\n", str[i]);
+//	return 0;
+//}//error
+#include <stdio.h>
+#include <string.h>
+//void swap(char* p[][100],int i,int j)
+//{
+//	char a[100];
+//	char b[100];
+//	char c[100];
+//	strcpy(a, p[i]);
+//	strcpy(p[i], p[j]);
+//	strcpy(b, p[i]);
+//	strcpy(p[j], p[i]);
+//	strcpy(c, p[i]);
+//}
+

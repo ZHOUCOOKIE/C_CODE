@@ -734,27 +734,47 @@
 //	func(t);
 //	printf("%d,%s\n", t.x, t.s);
 //}
-#include <stdio.h>
-
-struct  sample
-
-{
-	int a, b;
-	char* ch;
-};
-
-void f1(struct sample param)
-{
-	param.a += param.b;
-	printf("%d\n", param.a);
-	printf("%s\n", param.ch);
-}
-
-void main()
-{
-	struct sample arg;
-	arg.a = 1000;
-	arg.b = 100;
-	arg.ch = "abcd";
-	f1(arg);
-}
+//#include <stdio.h>
+//
+//struct  sample
+//
+//{
+//	int a, b;
+//	char* ch;
+//};
+//
+//void f1(struct sample param)
+//{
+//	param.a += param.b;
+//	printf("%d\n", param.a);
+//	printf("%s\n", param.ch);
+//}
+//
+//void main()
+//{
+//	struct sample arg;
+//	arg.a = 1000;
+//	arg.b = 100;
+//	arg.ch = "abcd";
+//	f1(arg);
+//}
+//#include <stdio.h>
+//void swap(int** pa, int** pb)
+//{
+//	int* z;
+//	z = **pa;
+//	**pa = **pb;
+//	**pb = z;
+//}
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	int* pa = &a;
+//	int* pb = &b;
+//	int* paa = &pa;
+//	int* pbb = &pb;
+//	swap(paa, pbb);
+//	printf("%d %d ", a, b);
+//	return 0;
+//}
