@@ -1000,41 +1000,60 @@
 //形参n给出数组a中数据的个数；利用指针odd返回奇数之和，利用指针even返回偶数之和。
 //例如：数组中的值依次为：1，9，2，3，11，6；
 //则利用指针odd返回奇数之和24；利用指针even返回偶数之和8。
-#include <stdio.h>
-#include <stdlib.h>
-void fun(int* a, int n, int* odd, int* even)
-{
-	int i = 0;
-	for (i = 0; i < n; i++)
-	{
-		if (a[i] % 2 != 0)
-		{
-			*odd += a[i];
-		}
-		else
-		{
-			*even += a[i];
-		}
-	}
-}
-int main()
-{
-	int* arr;
-	int n = 0;
-	int i = 0;
-	int o = 0;
-	int e = 0;
-	int* odd = &o;
-	int* even = &e;
-	printf("请输入要输入的数字的个数：");
-	scanf("%d", &n);
-	arr = (int*)malloc(n * sizeof(int));
-	printf("请输入数字（数字之间用空格隔开）：");
-	for (i = 0; i < n; i++)
-		scanf("%d", &arr[i]);
-	fun(arr, n, odd, even);
-	printf("\n奇数之和为：%d",*odd);
-	printf("\n偶数之和为：%d",*even);
-	free(arr);
-	return 0;
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//void fun(int* a, int n, int* odd, int* even)
+//{
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		if (a[i] % 2 != 0)
+//		{
+//			*odd += a[i];
+//		}
+//		else
+//		{
+//			*even += a[i];
+//		}
+//	}
+//}
+//int main()
+//{
+//	int* arr;
+//	int n = 0;
+//	int i = 0;
+//	int o = 0;
+//	int e = 0;
+//	int* odd = &o;
+//	int* even = &e;
+//	printf("请输入要输入的数字的个数：");
+//	scanf("%d", &n);
+//	arr = (int*)malloc(n * sizeof(int));
+//	printf("请输入数字（数字之间用空格隔开）：");
+//	for (i = 0; i < n; i++)
+//		scanf("%d", &arr[i]);
+//	fun(arr, n, odd, even);
+//	printf("\n奇数之和为：%d",*odd);
+//	printf("\n偶数之和为：%d",*even);
+//	free(arr);
+//	return 0;
+//}
+//建立学习成绩单结构，并建立一个同学王林（wanglin）的记录。
+//#include <stdio.h> 
+//void main()
+//{
+//    struct grade  /* 定义结构体类型 */
+//    {
+//        int number;
+//        char name[10];
+//        int math;
+//        int english;
+//    };
+//    struct grade wanglin;  /* 结构体变量 */
+//    printf("Please input the number, name, math, english:\n");
+//    scanf("%d%s%d%d", &wanglin.number, wanglin.name, &wanglin.math, &wanglin.english);//输入数据
+//    printf("wangling grade is: %d %s %d %d \n", wanglin.number, wanglin.name, wanglin.math,wanglin.english);
+//}
+// 
+//建立二维坐标系的点结构体，结构体元素为x，y，分别是横坐标和纵坐标，建立两个点的坐标。
+//计算并输出两个点的距离。（提示：平方根函数sqrt(), 需引入math.h）
