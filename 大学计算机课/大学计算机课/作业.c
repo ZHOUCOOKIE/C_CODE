@@ -934,77 +934,107 @@
 //}
 //用键盘输入5个字符串，首先将它们按照字符串中的字符个数由小到大排列，
 //再分别取出每个字符串的第三个字母合并成一个新的字符串保存到一字符串中，并输出。要求用到指针。
-int main()
-{
-	char str[5][100] = { 0 };
-	int i = 0;
-	int j = 0;
-	char copy[100] = { 0 };
-	char* pstr = str;
-	char newstr[6];
-	printf("请输五个字符串：");
-	for (i = 0; i < 5; i++)
-		scanf("%s", str[i]);
-	for (i = 0; i < 5; i++)
-	{
-		for (j = i + 1; j < 5; j++)
-			if (strlen(str[i]) > strlen(str[j]))
-			{
-				strcpy(copy, str[i]);
-				strcpy(str[i], str[j]);
-				strcpy(str[j], copy);
-			}
-
-	}
-	for (i = 0; i < 6; i++)
-		printf("%s\n", str[i]);
-	for (i = 0; i < 5; i++)
-		strcpy(newstr,pstr[i]);
-	return 0;
-}
-//#include <stdio.h>
-//#include <string.h>
-//void swap(char* p[][100],int i,int j)
-//{
-//	char a[20];
-//	strcpy(a, p[i]);
-//	strcpy(p[i], p[j]);
-//	strcpy(p[j], p[i]);
-//}
 //int main()
 //{
-//	char str[5][100];
+//	char str[5][100] = { 0 };
 //	int i = 0;
 //	int j = 0;
-//	int k = 0;
+//	char copy[100] = { 0 };
 //	char* pstr = str;
-//	char a = 'a';
-//	printf("请输入五个字符串：");
+//	char newstr[6];
+//	printf("请输五个字符串：");
 //	for (i = 0; i < 5; i++)
-//		gets(str[i]);
+//		scanf("%s", str[i]);
 //	for (i = 0; i < 5; i++)
 //	{
-//		for(j=i+1;j<4;j++)
-//			if (strlen(str[i]) > strlen(str[j]))//dwd dwda ey qeuhq h
+//		for (j = i + 1; j < 5; j++)
+//			if (strlen(str[i]) > strlen(str[j]))
 //			{
-//				swap(str,i,j);
+//				strcpy(copy, str[i]);
+//				strcpy(str[i], str[j]);
+//				strcpy(str[j], copy);
 //			}
+//
+//	}
+//	for (i = 0; i < 6; i++)
+//		printf("%s\n", str[i]);
+//	for (i = 0; i < 5; i++)
+//		strcpy(newstr,pstr[i]);
+//	return 0;
+//}
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char str[5][100] = { 0 };
+//	int i = 0;
+//	int j = 0;
+//	char copy[100] = {'0'};
+//	char* pstr[5];
+//	char newstr[6] = { '\0' };
+//	printf("请输五个字符串：");
+//	for (i = 0; i < 5; i++)
+//		scanf("%s", str[i]);
+//	for (i = 0; i < 5; i++)
+//		pstr[i] = str[i];
+//	for (i = 0; i < 5; i++)
+//	{
+//		for (j = i + 1; j < 5; j++)
+//			if (strlen(pstr[i]) > strlen(pstr[j]))
+//			{
+//				strcpy(copy, pstr[i]);
+//				strcpy(pstr[i], pstr[j]);
+//				strcpy(pstr[j], copy);
+//			}
+//
 //	}
 //	for (i = 0; i < 5; i++)
-//	printf("%s\n", str[i]);
+//		printf("%s\n", str[i]);
+//	for (i = 0; i < 5; i++)
+//		strncat(newstr,pstr[i]+2,1);
+//	printf("\n%s", newstr);
 //	return 0;
-//}//error
-#include <stdio.h>
-#include <string.h>
-//void swap(char* p[][100],int i,int j)
-//{
-//	char a[100];
-//	char b[100];
-//	char c[100];
-//	strcpy(a, p[i]);
-//	strcpy(p[i], p[j]);
-//	strcpy(b, p[i]);
-//	strcpy(p[j], p[i]);
-//	strcpy(c, p[i]);
 //}
-
+//3、请编一个函数fun(int* a, int n, int* odd, int* even)，
+//函数的功能是分别求出数组中所有奇数之和以及所有偶数之和。
+//形参n给出数组a中数据的个数；利用指针odd返回奇数之和，利用指针even返回偶数之和。
+//例如：数组中的值依次为：1，9，2，3，11，6；
+//则利用指针odd返回奇数之和24；利用指针even返回偶数之和8。
+#include <stdio.h>
+#include <stdlib.h>
+void fun(int* a, int n, int* odd, int* even)
+{
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		if (a[i] % 2 != 0)
+		{
+			*odd += a[i];
+		}
+		else
+		{
+			*even += a[i];
+		}
+	}
+}
+int main()
+{
+	int* arr;
+	int n = 0;
+	int i = 0;
+	int o = 0;
+	int e = 0;
+	int* odd = &o;
+	int* even = &e;
+	printf("请输入要输入的数字的个数：");
+	scanf("%d", &n);
+	arr = (int*)malloc(n * sizeof(int));
+	printf("请输入数字（数字之间用空格隔开）：");
+	for (i = 0; i < n; i++)
+		scanf("%d", &arr[i]);
+	fun(arr, n, odd, even);
+	printf("\n奇数之和为：%d",*odd);
+	printf("\n偶数之和为：%d",*even);
+	free(arr);
+	return 0;
+}
