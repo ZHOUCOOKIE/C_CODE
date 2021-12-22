@@ -780,7 +780,9 @@
 //}
 // 
 //基于结构体数组的学生成绩管理
-//struct Student {
+//#include <stdio.h>
+//struct Student 
+//{
 //	int studid;		/*学号*/
 //	char name[10];	/*姓名*/
 //	int math;		/*数学成绩*/
@@ -789,34 +791,34 @@
 //};
 //main()
 //{
-//	struct Student stud，student[12]; 	/*保存12个学生成绩的结构体数组*/
+//	struct Student stud,student[12]; 	/*保存12个学生成绩的结构体数组*/
 //	int i, j;
 //	printf("请依次输入学号、姓名、数学成绩、英语成绩 \n");
-//	for (i = 0; i < 12; i++)
+//	for (i = 0; i < 2; i++)
 //	{
 //		scanf("%d", &student[i].studid);
-//		scanf("s", &student[i].name);
+//		scanf("%s", student[i].name);
 //		scanf("%d", &student[i].math);
 //		scanf("%d", &student[i].english);
 //		student[i].total = student[i].math + student[i].english;  /*计算总成绩*/
 //	}
-//	for (i = 0; i < 11; i++) 	  /*采用对总成绩采用冒泡算法来排序*/
-//		for (j = i + 1; j < 12; j++)
-//			if (student[j].total > student[j - 1].total) 
+//	for (i = 0; i < 1; i++) 	  /*采用对总成绩采用冒泡算法来排序*/
+//		for (j = 0; j < 1-i; j++)
+//			if (student[j].total > student[j + 1].total) 
 //			{
 //				stud = student[j]; 
-//				student[j] = student[j - 1]; 
-//				student[j - 1] = stud;
+//				student[j] = student[j +1]; 
+//				student[j +1] = stud;
 //			}
 //	printf("按照总分进行从高到低排序，其排序输出如下：\n");
-//	printf("  学号 \t\t 姓名\t数学成绩 英语成绩 总分 \n");
-//	for (i = 0; i < 12; i++) 
+//	printf("  学号 \t 姓名\t数学成绩 英语成绩 总分 \n");
+//	for (i = 0; i < 2; i++) 
 //	{
 //		printf("%d\t", student[i].studid); 
 //		printf("%s\t", student[i].name);
-//		printf("%d\t", student[i].math); 
-//		printf("%d\t", student[i].english);
-//		printf("%d\n", student[i].total);
+//		printf("  %d\t", student[i].math); 
+//		printf("   %d\t", student[i].english);
+//		printf("  %d\n", student[i].total);
 //	}
 //	return 0;
 //}

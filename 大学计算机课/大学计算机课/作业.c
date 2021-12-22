@@ -1057,3 +1057,309 @@
 // 
 //建立二维坐标系的点结构体，结构体元素为x，y，分别是横坐标和纵坐标，建立两个点的坐标。
 //计算并输出两个点的距离。（提示：平方根函数sqrt(), 需引入math.h）
+//#include <stdio.h>
+//#include <math.h>
+//struct Coordinate {
+//	double x;
+//	double y;
+//};
+//int main()
+//{
+//	int i = 0;
+//	double distance = 0;
+//	struct Coordinate point[2];
+//	printf("请输入两个坐标(X,Y)：");
+//	for (i = 0; i < 2; i++)//存放两个点的坐标
+//	{
+//		scanf(" (%lf,%lf)", &point[i].x, &point[i].y);
+//	}
+//	distance = sqrt(pow(point[0].x-point[1].x,2)+pow(point[0].y - point[1].y,2));//计算两点之间的距离
+//	printf("两点之间的距离为：%lf",distance);
+//	return 0;
+//}
+//建立一学生结构体，学生信息有学号、姓名、出生日期（此为一结构体，有年月日组成）。可保存学生40人。实现：
+//（1）学生信息的插入；
+//（2）输入一学生学号，输出该学生信息；
+#include <stdio.h>
+struct Student {
+	long long sn;
+	char name[20];
+	struct Brithday {
+		int year;
+		int month;
+		int day;
+	}brithday;
+};
+int main()
+{
+	int i = 0;
+	char judge;
+	int number = 0;
+	struct Student student[40];
+	while (1)
+	{
+		printf("请选择要插入的位置：");
+		scanf("%d", &i);
+		switch (i)
+		{
+		case(1):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);			
+			break;
+		case(2):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+		case(3):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+		case(4):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(5):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(6):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(7):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(8):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(9):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(10):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(11):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(12):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(13):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(14):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(15):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(16):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(17):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(18):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(19):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(20):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(21):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(22):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(23):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(24):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(25):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(26):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(27):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(28):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(29):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(30):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(31):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(32):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(33):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(34):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(35):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(36):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(37):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(38):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(39):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		case(40):
+			printf("您将要插入的位置是：%d\n", i);
+			printf("请输入学号，姓名，出生日期(xxxx/xx/xx)：");
+			scanf("%lld %s %d/%d/%d", &student[i].sn, student[i].name, &student[i].brithday.year, &student[i].brithday.month, &student[i].brithday.day);
+			break;
+
+		default:
+			printf("您的输入非法！\n");
+			break;
+		}
+		getchar();
+		printf("是否要继续输入学生信息（Y/N）\n");
+		scanf("%c", &judge);
+		if ('N' == judge)
+			break;
+	}
+	while (1)
+	{
+		printf("请选择要查询的学生信息的学号：");
+		scanf("%d", &number);
+		printf("学号\t姓名\t出生日期\t\n");
+		printf("%lld %s %d/%d/%d\n", student[i].sn, student[i].name, student[i].brithday.year, student[i].brithday.month, student[i].brithday.day);			
+		printf("请选择是否要继续查询学生信息（Y/N）");
+		getchar();
+		scanf("%c", &judge);
+		if ('N' == judge)
+			break;
+	}
+	return 0;
+}
