@@ -1,2 +1,7 @@
 ﻿  作业.c
+  实验课.c
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\实验课.c(941,7): warning C4101: “ch”: 未引用的局部变量
+  方法.c
+  方法2.c
+  正在生成代码...
   大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\Debug\大学计算机课程.exe

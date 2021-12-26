@@ -842,4 +842,127 @@
 //	printf("%c\n", test.c);
 //	printf("%x\n", test.a);
 //}
-
+//将键盘上输入的一个字符串写入在文本文件中，然后读出并显示
+//#include <stdio.h>
+//void main()
+//{
+//	char ch; FILE* fp;		/*文件指针*/
+//	fp = fopen("string.txt", "wt");	/*创建文件并打开文件*/
+//	while ((ch = getchar()) != '#')  	/*从键盘输入字符*/
+//		fputc(ch, fp); 			/*把字符写入文件*/
+//	fclose(fp); 			/*关闭创建完毕的文件*/
+//	fp = fopen("string.txt", "rt");	/*创建文件并打开文件*/
+//	while ((ch = fgetc(fp)) != EOF)  	/*从文件读入字符*/
+//		putchar(ch); 			/*把字符显示到屏幕上*/
+//	putchar('\n');			/*屏幕换行*/
+//	fclose(fp); 			/*关闭文件*/
+//}
+//读入文本文件h1.txt，在屏幕上输出。
+//首先在程序目录中创建一个文本文件h1.txt，然后运行如下程序。
+//#include <stdio.h>
+//void main() {
+//	FILE* fp;
+//	char ch;
+//	if ((fp = fopen("h1.txt", "rt")) == NULL)
+//	{
+//		printf("\n 不能打开文本文件h1.txt文件\n");
+//		ch = getchar();
+//		exit(1);
+//	}
+//	ch = fgetc(fp); //从文件中读入数据
+//	while (ch != EOF)
+//	{
+//		putchar(ch); //输出数据
+//		ch = fgetc(fp);
+//	}
+//	fclose(fp);
+//}
+//fputs函数的功能是向指定的文件写入一个字符串，其调用形式为：fputs(字符串，文件指针)
+//其中字符串可以是字符串常量，也可以是字符数组名，或指针变量。
+//#include<stdio.h>
+//#include <stdlib.h>
+//main()
+//{
+//	FILE* fp;
+//	char ch, st[20];
+//	if ((fp = fopen("string.txt", "at+")) == NULL)
+//	{
+//		printf("Cannot open file strike any key exit!");
+//		exit(1);
+//	}
+//	printf("input a string:\n");
+//	scanf("%s", st);
+//	fputs(st, fp);
+//	fclose(fp);
+//}
+//读字符串函数fgets函数的功能是从指定的文件中读一个字符串到字符数组中，
+//函数调用的形式为： fgets(字符数组名，n，文件指针)； 其中的n是一个正整数。
+//表示从文件中读出的字符串不超过 n - 1个字符。在读入的最后一个字符后加上串结束标志'\0'。
+//例如：fgets(str, n, fp); 的意义是从fp所指的文件中读出n - 1个字符送入字符数组str中。
+//#include<stdio.h>
+//#include <stdlib.h>
+//main()
+//{
+//	FILE* fp;
+//	char str[11];
+//	if ((fp = fopen("string.txt", "rt")) == NULL)
+//	{
+//		printf("Cannot open file strike any key exit!");
+//		exit(1);
+//	}
+//	while (!feof(fp))
+//	{
+//		fgets(str, 10, fp);
+//		printf("%s", str);
+//	}
+//	fclose(fp);
+//}
+//fscanf函数，fprintf函数与前面使用的scanf和printf 函数的功能相似，都是格式化读写函数。
+//两者的区别在于 fscanf 函数和fprintf函数的读写对象不是键盘和显示器，而是磁盘文件。
+//这两个函数的调用格式为： 
+// fscanf(文件指针，格式字符串，输入表列)；
+//fprintf(文件指针，格式字符串，输出表列)； 
+//例如：
+//fscanf(fp, "%d%s", &i, s);
+//fprintf(fp, "%d%c", j, ch);
+//
+//#include<stdio.h>
+//#include <stdlib.h>
+//struct stu
+//{
+//	char name[10];
+//	int num;
+//	int age;
+//	char addr[15];
+//}stu1;
+//main()
+//{
+//	FILE* fp;
+//	char ch;
+//	int i;
+//
+//	if ((fp = fopen("stu.txt", "wt")) == NULL)
+//	{
+//		printf("Cannot open file strike any key exit!");
+//		exit(1);
+//	}
+//	printf("input data\n");
+//	for (i = 0; i < 2; i++)
+//	{
+//		scanf("%s%d%d%s", stu1.name, &stu1.num, &stu1.age, stu1.addr);
+//		fprintf(fp, "%s %d %d %s\n", stu1.name, stu1.num, stu1.age, stu1.addr);
+//	}
+//	fclose(fp);
+//	if ((fp = fopen("stu.txt", "rt")) == NULL)
+//	{
+//		printf("Cannot open file strike any key exit!");
+//		exit(1);
+//	}
+//	for (i = 0; i < 2; i++)
+//	{
+//		fscanf(fp, "%s %d %d %s\n", stu1.name, &stu1.num, &stu1.age, stu1.addr);
+//		printf("%s %d %d %s\n", stu1.name, stu1.num, stu1.age, stu1.addr);
+//	}
+//	fclose(fp);
+//}
+//提示：输入时不要超出范围，以空格分割。
