@@ -1,7 +1,5 @@
 ﻿  作业.c
-  实验课.c
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\实验课.c(941,7): warning C4101: “ch”: 未引用的局部变量
-  方法.c
-  方法2.c
-  正在生成代码...
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1410,16): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1410,11): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1423,50): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
   大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\Debug\大学计算机课程.exe

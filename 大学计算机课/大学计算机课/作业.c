@@ -1363,3 +1363,92 @@
 //	}
 //	return 0;
 //}
+
+//每个学生的数据包括姓名、学号、平时成绩、考试成绩以及总评成绩，
+//可实现从键盘输入学生的数据并计算总评成绩，
+//将原有数据和计算出的总评成绩存放在磁盘文件 stu.dat中。（可输入5名学生信息和成绩进行测试）
+//程序要求功能如下：
+//（1）程序功能能够进行选择；
+//（2）信息录入功能；
+//（3）信息查询，可输入学生学号，查询出该学生信息；
+//（4）输入一总评成绩，输出分数线以上学生姓名、学号和总评成绩，并输出总人数。
+//（5）数据备份功能。
+#include <stdio.h>
+
+int file_size()
+{
+	FILE* fp = fopen("student.dat", "r");
+	if (!fp) return -1;
+	fseek(fp, 0L, SEEK_END);
+	int size = ftell(fp);
+	fclose(fp);
+
+	return size;
+}
+
+struct Student {
+	char name[20];
+	long long num;
+	int Ugrades;
+	int testscore;
+	int Oescore;
+}student[5],s;
+
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int j = 0;
+	int judge = 0;
+	printf("请选择需要使用的功能（信息录入请输入1 信息查询请输入2）：");
+	scanf("%d", &judge);
+	if (1 == judge)
+	{
+		FILE* fp = fopen("student.dat", "ab+");
+		if (fp == NULL)
+		{
+			perror(fopen);
+			return 1;
+		}
+		printf("请输入要输入的学生个数：");
+		scanf("%d", &n);
+		if (file_size() == 1)
+		{
+			fprintf(fp, "学生姓名 \t     学生学号         平时成绩    考试成绩  总评成绩\n");
+		}
+		for (i = 0; i < n; i++)
+		{
+			printf("请输入学生信息（学生姓名 学生学号 学生平时成绩 学生考试成绩）：");
+			scanf("%s %lld %d %d", student[i].name, &student[i].num, &student[i].Ugrades, &student[i].testscore);
+			student[i].Oescore = student[i].Ugrades * 0.4 + student[i].testscore * 0.6;
+			fprintf(fp, "%s \t%lld \t%d \t%d \t%d\n", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore, student[i].Oescore);
+		}
+		fclose(fp);
+	}
+	else if (2 == judge)
+	{
+		FILE* fp = fopen("student.dat", "rb");
+		n = 0;
+		fread(&s, sizeof(struct Student), 1, fp);
+		while (!feof(fp))
+		{
+			student[n] = s;
+			n++;
+			fread(&s, sizeof(struct Student),1,fp);
+		}
+		fclose(fp);
+		//for(i=0;i<n-1;i++)
+		//	for(j=n-1;j>i;j--)
+		//		if (student[j].Oescore > student[j - 1].Oescore)
+		//		{
+		//			s = student[j];
+		//			student[j] = student[j - 1];
+		//			student[j - 1] = s;
+		//		}
+		for (i = 0; i < n-3; i++)
+		{
+			printf("%s %lld %d %d %d", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore,student[i].Oescore);
+		}
+	}
+	return 0;
+}
