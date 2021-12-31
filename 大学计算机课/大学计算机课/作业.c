@@ -1373,82 +1373,141 @@
 //（3）信息查询，可输入学生学号，查询出该学生信息；
 //（4）输入一总评成绩，输出分数线以上学生姓名、学号和总评成绩，并输出总人数。
 //（5）数据备份功能。
-#include <stdio.h>
-
-int file_size()
-{
-	FILE* fp = fopen("student.dat", "r");
-	if (!fp) return -1;
-	fseek(fp, 0L, SEEK_END);
-	int size = ftell(fp);
-	fclose(fp);
-
-	return size;
-}
-
-struct Student {
-	char name[20];
-	long long num;
-	int Ugrades;
-	int testscore;
-	int Oescore;
-}student[5],s;
-
-int main()
-{
-	int n = 0;
-	int i = 0;
-	int j = 0;
-	int judge = 0;
-	printf("请选择需要使用的功能（信息录入请输入1 信息查询请输入2）：");
-	scanf("%d", &judge);
-	if (1 == judge)
-	{
-		FILE* fp = fopen("student.dat", "ab+");
-		if (fp == NULL)
-		{
-			perror(fopen);
-			return 1;
-		}
-		printf("请输入要输入的学生个数：");
-		scanf("%d", &n);
-		if (file_size() == 1)
-		{
-			fprintf(fp, "学生姓名 \t     学生学号         平时成绩    考试成绩  总评成绩\n");
-		}
-		for (i = 0; i < n; i++)
-		{
-			printf("请输入学生信息（学生姓名 学生学号 学生平时成绩 学生考试成绩）：");
-			scanf("%s %lld %d %d", student[i].name, &student[i].num, &student[i].Ugrades, &student[i].testscore);
-			student[i].Oescore = student[i].Ugrades * 0.4 + student[i].testscore * 0.6;
-			fprintf(fp, "%s \t%lld \t%d \t%d \t%d\n", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore, student[i].Oescore);
-		}
-		fclose(fp);
-	}
-	else if (2 == judge)
-	{
-		FILE* fp = fopen("student.dat", "rb");
-		n = 0;
-		fread(&s, sizeof(struct Student), 1, fp);
-		while (!feof(fp))
-		{
-			student[n] = s;
-			n++;
-			fread(&s, sizeof(struct Student),1,fp);
-		}
-		fclose(fp);
-		//for(i=0;i<n-1;i++)
-		//	for(j=n-1;j>i;j--)
-		//		if (student[j].Oescore > student[j - 1].Oescore)
-		//		{
-		//			s = student[j];
-		//			student[j] = student[j - 1];
-		//			student[j - 1] = s;
-		//		}
-		for (i = 0; i < n-3; i++)
-		{
-			printf("%s %lld %d %d %d", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore,student[i].Oescore);
-		}
-	}
-	return 0;
-}
+//#include <stdio.h>
+//
+//int file_size()
+//{
+//	FILE* fp = fopen("student.dat", "r");
+//	if (!fp) return -1;
+//	fseek(fp, 0L, SEEK_END);
+//	int size = ftell(fp);
+//	fclose(fp);
+//
+//	return size;
+//}
+//
+//struct Student {
+//	char name[20];
+//	long long num;
+//	int Ugrades;
+//	int testscore;
+//	int Oescore;
+//}student[5],s;
+//
+//int main()
+//{
+//	int n = 0;
+//	int i = 0;
+//	int j = 0;
+//	int judge = 0;
+//	printf("请选择需要使用的功能（信息录入请输入1 信息查询请输入2）：");
+//	scanf("%d", &judge);
+//	if (1 == judge)
+//	{
+//		FILE* fp = fopen("student.dat", "ab+");
+//		if (fp == NULL)
+//		{
+//			perror(fopen);
+//			return 1;
+//		}
+//		printf("请输入要输入的学生个数：");
+//		scanf("%d", &n);
+//		if (file_size() == 1)
+//		{
+//			fprintf(fp, "学生姓名 \t     学生学号         平时成绩    考试成绩  总评成绩\n");
+//		}
+//		for (i = 0; i < n; i++)
+//		{
+//			printf("请输入学生信息（学生姓名 学生学号 学生平时成绩 学生考试成绩）：");
+//			scanf("%s %lld %d %d", student[i].name, &student[i].num, &student[i].Ugrades, &student[i].testscore);
+//			student[i].Oescore = student[i].Ugrades * 0.4 + student[i].testscore * 0.6;
+//			fprintf(fp, "%s \t%lld \t%d \t%d \t%d\n", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore, student[i].Oescore);
+//		}
+//		fclose(fp);
+//	}
+//	else if (2 == judge)
+//	{
+//		FILE* fp = fopen("student.dat", "rb");
+//		n = 0;
+//		fread(&s, sizeof(struct Student), 1, fp);
+//		while (!feof(fp))
+//		{
+//			student[n] = s;
+//			n++;
+//			fread(&s, sizeof(struct Student),1,fp);
+//		}
+//		fclose(fp);
+//		//for(i=0;i<n-1;i++)
+//		//	for(j=n-1;j>i;j--)
+//		//		if (student[j].Oescore > student[j - 1].Oescore)
+//		//		{
+//		//			s = student[j];
+//		//			student[j] = student[j - 1];
+//		//			student[j - 1] = s;
+//		//		}
+//		for (i = 0; i < n-3; i++)
+//		{
+//			printf("%s %lld %d %d %d", student[i].name, student[i].num, student[i].Ugrades, student[i].testscore,student[i].Oescore);
+//		}
+//	}
+//	return 0;
+//}
+//利用fscanf和fprintf，输入商品名称、单价、数量、计算总价后保存到文本文件中，各项用空格分开，然后读取文件内容，输出冰箱的销售情况
+//#include <stdio.h>
+//#include <stdlib.h>
+//struct Sale {
+//	char name[20];
+//	float price;
+//	int num;
+//	float sum;
+//}* prefrigeratory,prefri;
+//int main()
+//{
+//	int i = 0;
+//	int k = 0;
+//	FILE* fp;
+//	printf("请输入要输入的商品的个数：");
+//	scanf("%d", &i);
+//	fflush(stdin);
+//	prefrigeratory = (struct Sale *)malloc(i * sizeof(struct Sale));
+//	if (prefrigeratory == NULL)
+//	{
+//		perror(malloc);
+//		return 1;
+//	}
+//	for (k = 0; k < i; k++)
+//	{
+//		printf("请输入冰箱的名称、单价、数量：");
+//		scanf("%s %f %d", prefrigeratory[k].name, &prefrigeratory[k].price, &prefrigeratory[k].num);
+//		prefrigeratory->sum = (prefrigeratory->num) * (prefrigeratory->price);
+//		fflush(stdin);
+//	}
+//	fp = fopen("sale.txt", "wb");
+//	if (fp == NULL)
+//	{
+//		perror(fopen);
+//		return 1;
+//	}
+//	for (; k < i; k++);
+//	{
+//		k = 0;
+//		fprintf(fp, "%s %f %d %f", prefrigeratory[k].name, prefrigeratory[k].price, prefrigeratory[k].num, prefrigeratory[k].sum);
+//	}
+//	fclose(fp);
+//	free(prefrigeratory);
+//	fp = fopen("sale.txt", "rb");
+//	if (fp == NULL)
+//	{
+//		perror(fopen);
+//		return 1;
+//	}
+//	printf("冰箱名称、单价、数量、总价\n");
+//	fscanf(fp, "%s %f %d %f", prefri.name, &prefri.price, &prefri.num, &prefri.sum);
+//	while (!feof(fp))
+//	{
+//		printf("%s %f %d %f", prefri.name, prefri.price, prefri.num, prefri.sum);
+//		fscanf(fp, "%s %f %d %f", prefri.name, &prefri.price, &prefri.num, &prefri.sum);
+//	}
+//	fclose(fp);
+//	return 0;
+//}

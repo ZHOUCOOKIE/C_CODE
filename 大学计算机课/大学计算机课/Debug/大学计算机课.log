@@ -1,5 +1,8 @@
 ﻿  作业.c
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1410,16): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1410,11): warning C4024: “perror”: 形参和实参 1 的类型不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1423,50): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1475,16): warning C4047: “函数”:“const char *”与“void *(__cdecl *)(size_t)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1475,10): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1488,15): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1488,10): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1501,15): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1501,10): warning C4024: “perror”: 形参和实参 1 的类型不同
   大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\Debug\大学计算机课程.exe
