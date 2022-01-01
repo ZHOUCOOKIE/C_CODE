@@ -1,8 +1,20 @@
 ﻿  作业.c
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1475,16): warning C4047: “函数”:“const char *”与“void *(__cdecl *)(size_t)”的间接级别不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1475,10): warning C4024: “perror”: 形参和实参 1 的类型不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1488,15): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1488,10): warning C4024: “perror”: 形参和实参 1 的类型不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1501,15): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
-C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1501,10): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1560,37): warning C4013: “malloc”未定义；假设外部返回 int
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1563,18): warning C4047: “函数”:“const char *”与“int (__cdecl *)()”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1563,12): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1570,51): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1575,17): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1575,12): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1588,17): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1588,12): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1612,17): warning C4047: “函数”:“const char *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1612,12): warning C4024: “perror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1637,17): warning C4047: “函数”:“FILE *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1637,12): warning C4024: “ferror”: 形参和实参 1 的类型不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1642,17): warning C4047: “函数”:“FILE *”与“FILE *(__cdecl *)(const char *,const char *)”的间接级别不同
+C:\Users\zhouc\source\repos\C_CODE\大学计算机课\大学计算机课\作业.c(1642,12): warning C4024: “ferror”: 形参和实参 1 的类型不同
+  实验课.c
+  方法.c
+  方法2.c
+  正在生成代码...
   大学计算机课.vcxproj -> C:\Users\zhouc\source\repos\C_CODE\大学计算机课\Debug\大学计算机课程.exe

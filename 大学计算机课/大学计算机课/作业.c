@@ -1511,3 +1511,151 @@
 //	fclose(fp);
 //	return 0;
 //}
+//每个学生的数据包括姓名、学号、平时成绩、考试成绩以及总评成绩，
+//可实现从键盘输入学生的数据并计算总评成绩，
+//将原有数据和计算出的总评成绩存放在磁盘文件 stu.dat中。（可输入5名学生信息和成绩进行测试）
+//程序要求功能如下：
+//（1）程序功能能够进行选择；
+//（2）信息录入功能；
+//（3）信息查询，可输入学生学号，查询出该学生信息；
+//（4）输入一总评成绩，输出分数线以上学生姓名、学号和总评成绩，并输出总人数。
+//（5）数据备份功能。
+//int file_size()
+//{
+//	FILE* fp = fopen("student.dat", "r");
+//	if (!fp) return -1;
+//	fseek(fp, 0L, SEEK_END);
+//	int size = ftell(fp);
+//	fclose(fp);
+//
+//	return size;
+//}
+
+#include <stdio.h>
+
+struct Student {
+	long long num;
+	char name[10];
+	int Ugrades;
+	int testscore;
+	float Oescore;
+}* student,s;
+
+int main()
+{
+	int n = 0;
+	int i = 0;
+	int j = 0;
+	int judge = 0;
+	while (1)
+	{
+		printf("请选择需要使用的功能（信息录入请输入1 信息查询请输入2 查询总评分数线以上的同学3 数据备份4 退出0）：");
+		scanf("%d", &judge);
+		if (1 == judge)//信息录入
+		{
+			FILE* fp;
+			printf("请输入要输入的学生个数：");
+			scanf("%d", &n);
+			fflush(stdin);
+			student = (struct Student*)malloc(i * sizeof(struct Student));
+			if (student == NULL)
+			{
+				perror(malloc);
+				return 1;
+			}
+			for (i = 0; i < n; i++)
+			{
+				printf("请输入学生信息（学生学号 学生姓名 学生平时成绩 学生考试成绩）：");
+				scanf("%lld %s %d %d", &student[i].num, student[i].name, &student[i].Ugrades, &student[i].testscore);
+				student[i].Oescore = student[i].Ugrades * 0.4 + student[i].testscore * 0.6;
+			}
+			fp = fopen("student.dat", "ab+");
+			if (fp == NULL)
+			{
+				perror(fopen);
+				return 1;
+			}
+			for (i = 0; i < n; i++)
+				fprintf(fp, "%lld %s %d %d %f\n", student[i].num, student[i].name, student[i].Ugrades, student[i].testscore, student[i].Oescore);
+			fclose(fp);
+		}
+		else if (2 == judge)//信息查询，可输入学生学号，查询出该学生信息；
+		{
+			long long scan;
+			FILE* fp = fopen("student.dat", "rb");
+			if (fp == NULL)
+			{
+				perror(fopen);
+				return 1;
+			}
+			printf("请输入要查询的学号：");
+			scanf("%lld", &scan);
+			fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			while (!feof(fp))
+			{
+				if (scan == s.num)
+				{
+					printf(" 学生学号 \t学生姓名 学生平时成绩 学生考试成绩 学生总评成绩\n");
+					printf(" %lld \t %s       %d          %d         %f\n", s.num, s.name, s.Ugrades, s.testscore, s.Oescore);
+				}
+				fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			}
+			fclose(fp);
+		}
+		else if (3 == judge)//信息查询，可输入学生学号，查询出该学生信息；
+		{
+			float scan;
+			int num = 0;
+			FILE* fp = fopen("student.dat", "rb");
+			if (fp == NULL)
+			{
+				perror(fopen);
+				return 1;
+			}
+			printf("请输入总评分数线：");
+			scanf("%f", &scan);
+			fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			printf(" 学生学号 \t学生姓名 学生平时成绩 学生考试成绩 学生总评成绩\n");
+			while (!feof(fp))
+			{
+				if (scan <= s.Oescore)
+				{
+					printf(" %lld \t %s       %d          %d         %f\n", s.num, s.name, s.Ugrades, s.testscore, s.Oescore);
+					num++;
+				}
+				fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			}
+			printf("总评分数线以上共有%d人\n", num);
+			fclose(fp);
+		}
+		else if(4 == judge)//数据备份
+		{
+			FILE* fp1;
+			FILE* fp;
+			if ((fp = fopen("student.dat", "rt")) == NULL)
+			{
+				ferror(fopen);
+				return 1;
+			}
+			if ((fp1 = fopen("student1.dat", "wt")) == NULL)
+			{
+				ferror(fopen);
+				return 1;
+			}
+			fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			while (!feof(fp))
+			{
+				fprintf(fp1, "%lld %s %d %d %f\n", s.num, s.name, s.Ugrades, s.testscore, s.Oescore);
+				fscanf(fp, "%lld %s %d %d %f", &s.num, s.name, &s.Ugrades, &s.testscore, &s.Oescore);
+			}
+			printf("数据备份成功！\n");
+			fclose(fp);
+			fclose(fp1);
+		}
+		else if (0 == judge)//退出程序
+		{
+			break;
+		}
+	}
+	return 0;
+}
